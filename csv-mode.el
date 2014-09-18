@@ -806,7 +806,6 @@ the mode line after `csv-field-index-delay' seconds of Emacs idle time."
 (defun csv-field-name (&optional field)
   "Find the name of the specified field. If no field is
 specified, find the name of the current field."
-  (interactive "p")
   (let ((field (if field field (csv-field-index))))
     (save-excursion
       (beginning-of-buffer)
