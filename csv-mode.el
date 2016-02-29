@@ -129,7 +129,7 @@ Set by customizing `csv-separators' -- do not set directly!")
   "Font lock keywords to highlight the field separators in CSV mode.
 Set by customizing `csv-separators' -- do not set directly!")
 
-(defcustom csv-separators '(",")
+(defcustom csv-separators '("," "\t")
   "Field separators: a list of *single-character* strings.
 For example: (\",\"), the default, or (\",\" \";\" \":\").
 Neighbouring fields may be separated by any one of these characters.
