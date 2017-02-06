@@ -113,6 +113,11 @@
   "Major mode for editing files of comma-separated value type."
   :group 'convenience)
 
+;; This changed around emacs 25
+(eval-when-compile
+  (when (not (boundp 'default-mode-line-format))
+    (defvar default-mode-line-format (default-value 'mode-line-format))))
+
 (defvar csv-separator-chars nil
   "Field separators as a list of character.
 Set by customizing `csv-separators' -- do not set directly!")
@@ -129,7 +134,7 @@ Set by customizing `csv-separators' -- do not set directly!")
   "Font lock keywords to highlight the field separators in CSV mode.
 Set by customizing `csv-separators' -- do not set directly!")
 
-(defcustom csv-separators '("," "\t")
+(defcustom csv-separators '(",")
   "Field separators: a list of *single-character* strings.
 For example: (\",\"), the default, or (\",\" \";\" \":\").
 Neighbouring fields may be separated by any one of these characters.
